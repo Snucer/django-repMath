@@ -1,0 +1,543 @@
+/* Стили для главной страницы */
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    margin-top: 76px;
+}
+
+.tutor-photo-placeholder {
+    width: 400px;
+    height: 400px;
+    border: 3px solid #dee2e6;
+    font-size: 1.1rem;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #0d6efd;
+    margin: 15px 0;
+}
+
+.text-center .section-title::after {
+    margin: 15px auto;
+}
+
+/* Bio Cards */
+.education-card,
+.experience-card,
+.approach-card {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover,
+.experience-card:hover,
+.approach-card:hover {
+    transform: translateY(-5px);
+}
+
+.education-card {
+    border-left: 4px solid #0d6efd;
+}
+
+.experience-card {
+    border-left: 4px solid #198754;
+}
+
+.approach-card {
+    border-left: 4px solid #ffc107;
+}
+
+/* Results Section */
+.result-item {
+    padding: 20px;
+}
+
+.result-number {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.result-label {
+    font-size: 1.1rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        margin-top: 66px;
+        text-align: center;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .tutor-photo-placeholder {
+        width: 300px;
+        height: 300px;
+        margin-top: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .result-number {
+        font-size: 2.5rem;
+    }
+}
+
+/* Smooth animations */
+.bio-content .card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.education-card { animation-delay: 0.1s; }
+.experience-card { animation-delay: 0.2s; }
+.approach-card { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Стили для страницы записи */
+
+/* Форма */
+#signup-form .form-control,
+#signup-form .form-select {
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+#signup-form .form-control:focus,
+#signup-form .form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.1);
+}
+
+#signup-form .form-label {
+    color: #495057;
+    margin-bottom: 8px;
+}
+
+/* Чекбоксы */
+.form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.form-check-input:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Карточка формы */
+.card {
+    border-radius: 20px;
+}
+
+.card-body {
+    border-radius: 20px;
+}
+
+/* Информационные блоки */
+.info-item {
+    padding: 20px;
+}
+
+.info-icon {
+    font-size: 2.5rem;
+}
+
+.info-item h5 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* Хлебные крошки */
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 2rem !important;
+    }
+    
+    .display-5 {
+        font-size: 1.8rem;
+    }
+    
+    .btn-lg {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Анимация при фокусе */
+.form-control:focus,
+.form-select:focus {
+    transform: translateY(-2px);
+}
+
+/* Стили для выбранных чекбоксов */
+.form-check-input:checked + .form-check-label {
+    color: #0d6efd;
+    font-weight: 500;
+}
+
+/* Стили для страницы контактов */
+
+/* Контактные элементы */
+.contact-item {
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-color: #0d6efd;
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+}
+
+.contact-details a {
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: #0d6efd !important;
+}
+
+/* Места работы */
+.work-place {
+    padding: 1.25rem;
+    border-radius: 10px;
+    border-left: 4px solid #0d6efd;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.work-place:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+/* График работы */
+.schedule-table .table {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.schedule-table tr td:first-child {
+    width: 60%;
+}
+
+/* Карта-заглушка */
+.map-placeholder {
+    border: 2px dashed #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.map-placeholder:hover {
+    border-color: #0d6efd;
+    background: #f8f9fa !important;
+}
+
+/* Кнопки мессенджеров */
+.btn-outline-success:hover {
+    background: #198754;
+    border-color: #198754;
+}
+
+.btn-outline-primary:hover {
+    background: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* CTA секция */
+.cta-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .contact-item {
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .contact-icon {
+        font-size: 2rem;
+    }
+    
+    .work-place {
+        padding: 1rem;
+    }
+    
+    .cta-section {
+        padding: 2rem 1rem !important;
+    }
+    
+    .btn-lg {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* Анимации */
+.contact-item,
+.work-place,
+.schedule-table {
+    animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Иконки социальных сетей */
+.btn-outline-dark:hover {
+    background: #343a40;
+    border-color: #343a40;
+}
+
+.btn-outline-info:hover {
+    background: #0dcaf0;
+    border-color: #0dcaf0;
+}
+
+.btn-outline-secondary:hover {
+    background: #6c757d;
+    border-color: #6c757d;
+}
+
+/* Стили для страницы отзывов (без фильтра) */
+
+/* Карточки отзывов */
+.review-card {
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    border: 1px solid #e9ecef;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+    border-color: #0d6efd;
+}
+
+.review-header {
+    border-bottom: 1px solid #f1f3f4;
+    padding-bottom: 1rem;
+}
+
+.review-author {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.review-meta {
+    font-size: 0.875rem;
+}
+
+.review-rating {
+    font-size: 1.1rem;
+}
+
+.review-text {
+    color: #495057;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.review-result {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+}
+
+.review-footer {
+    border-top: 1px solid #f1f3f4;
+    padding-top: 1rem;
+}
+
+/* Статистика */
+.rating-stats,
+.reviews-count,
+.success-rate,
+.experience-count {
+    padding: 1rem;
+}
+
+.rating-number,
+.count-number,
+.rate-number,
+.exp-number {
+    line-height: 1;
+}
+
+.rating-stars,
+.count-icon,
+.rate-icon,
+.exp-icon {
+    font-size: 1.5rem;
+}
+
+.rating-label,
+.count-label,
+.rate-label,
+.exp-label {
+    font-size: 0.875rem;
+}
+
+/* Пагинация */
+.pagination .page-link {
+    border-radius: 8px;
+    margin: 0 3px;
+    border: 1px solid #dee2e6;
+    color: #495057;
+    transition: all 0.3s ease;
+}
+
+.pagination .page-link:hover {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* CTA секция */
+.cta-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+/* Бейджи результатов */
+.badge.bg-success {
+    background: linear-gradient(135deg, #28a745, #20c997) !important;
+}
+
+/* Анимации */
+.review-card {
+    animation: slideInUp 0.6s ease;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Задержки анимаций для карточек */
+.review-card:nth-child(1) { animation-delay: 0.1s; }
+.review-card:nth-child(2) { animation-delay: 0.2s; }
+.review-card:nth-child(3) { animation-delay: 0.3s; }
+.review-card:nth-child(4) { animation-delay: 0.4s; }
+.review-card:nth-child(5) { animation-delay: 0.5s; }
+.review-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .review-card {
+        margin-bottom: 1rem;
+    }
+    
+    .review-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .review-rating {
+        margin-top: 0.5rem;
+    }
+    
+    .rating-stats,
+    .reviews-count,
+    .success-rate,
+    .experience-count {
+        padding: 0.5rem;
+    }
+    
+    .rating-number,
+    .count-number,
+    .rate-number,
+    .exp-number {
+        font-size: 2rem;
+    }
+    
+    .cta-section {
+        padding: 2rem 1rem !important;
+    }
+}
+
+/* Кавычки для цитат */
+.review-text::before {
+    content: "“";
+    font-size: 2rem;
+    color: #0d6efd;
+    line-height: 0;
+    margin-right: 5px;
+}
+
+.review-text::after {
+    content: "”";
+    font-size: 2rem;
+    color: #0d6efd;
+    line-height: 0;
+    margin-left: 5px;
+}

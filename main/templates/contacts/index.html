@@ -1,12 +1,247 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-</head>
-<body>
-    <h1>{{ title }}</h1>
-    <div>{{ content }}</div>
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Контакты - Репетитор по математике{% endblock %}
+
+{% block content %}
+<div class="container py-5 mt-5">
+    <!-- Хлебные крошки -->
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Главная</a></li>
+            <li class="breadcrumb-item active">Контакты</li>
+        </ol>
+    </nav>
+
+    <!-- Заголовок -->
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-primary mb-3">Мои контакты</h1>
+        <p class="lead text-muted">
+            Свяжитесь со мной любым удобным способом для консультации или записи на занятия
+        </p>
+    </div>
+
+    <div class="row">
+        <!-- Основная контактная информация -->
+        <div class="col-lg-8 mb-5">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body p-4">
+                    <h3 class="card-title mb-4">Контактная информация</h3>
+                    
+                    <div class="row">
+                        <!-- Телефоны -->
+                        <div class="col-md-6 mb-4">
+                            <div class="contact-item">
+                                <div class="contact-icon text-primary mb-2">📞</div>
+                                <h5>Телефоны</h5>
+                                <div class="contact-details">
+                                    <p class="mb-1">
+                                        <a href="tel:+79991234567" class="text-decoration-none text-dark">
+                                            +7 (999) 123-45-67
+                                        </a>
+                                        <br>
+                                        <small class="text-muted">Основной номер</small>
+                                    </p>
+                                    <p class="mb-0">
+                                        <a href="tel:+79998765432" class="text-decoration-none text-dark">
+                                            +7 (999) 876-54-32
+                                        </a>
+                                        <br>
+                                        <small class="text-muted">WhatsApp/Telegram</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="col-md-6 mb-4">
+                            <div class="contact-item">
+                                <div class="contact-icon text-primary mb-2">✉️</div>
+                                <h5>Электронная почта</h5>
+                                <div class="contact-details">
+                                    <p class="mb-1">
+                                        <a href="mailto:petrov.math@mail.ru" class="text-decoration-none text-dark">
+                                            petrov.math@mail.ru
+                                        </a>
+                                        <br>
+                                        <small class="text-muted">Основной email</small>
+                                    </p>
+                                    <p class="mb-0">
+                                        <a href="mailto:petrov.tutor@gmail.com" class="text-decoration-none text-dark">
+                                            petrov.tutor@gmail.com
+                                        </a>
+                                        <br>
+                                        <small class="text-muted">Для документов</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Мессенджеры -->
+                        <div class="col-md-6 mb-4">
+                            <div class="contact-item">
+                                <div class="contact-icon text-primary mb-2">💬</div>
+                                <h5>Мессенджеры</h5>
+                                <div class="contact-details">
+                                    <div class="d-flex gap-3 mb-2">
+                                        <a href="https://wa.me/79991234567" class="btn btn-outline-success btn-sm">
+                                            WhatsApp
+                                        </a>
+                                        <a href="https://t.me/petrov_math" class="btn btn-outline-primary btn-sm">
+                                            Telegram
+                                        </a>
+                                    </div>
+                                    <small class="text-muted">Быстрый ответ в рабочее время</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Социальные сети -->
+                        <div class="col-md-6 mb-4">
+                            <div class="contact-item">
+                                <div class="contact-icon text-primary mb-2">🌐</div>
+                                <h5>Социальные сети</h5>
+                                <div class="contact-details">
+                                    <div class="d-flex gap-2 flex-wrap">
+                                        <a href="#" class="btn btn-outline-dark btn-sm">VK</a>
+                                        <a href="#" class="btn btn-outline-info btn-sm">Instagram</a>
+                                        <a href="#" class="btn btn-outline-secondary btn-sm">YouTube</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Боковая панель с местами работы -->
+        <div class="col-lg-4 mb-5">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h4 class="card-title mb-4">📍 Места работы</h4>
+                    
+                    <div class="work-place mb-4">
+                        <h6 class="fw-bold mb-2">Школа №123 с углубленным изучением математики</h6>
+                        <p class="text-muted small mb-1">
+                            <span class="text-primary">Должность:</span> Учитель математики
+                        </p>
+                        <p class="text-muted small mb-1">
+                            <span class="text-primary">График:</span> Пн-Пт, 9:00-15:00
+                        </p>
+                        <p class="text-muted small mb-0">
+                            <span class="text-primary">Адрес:</span> ул. Математическая, 45
+                        </p>
+                    </div>
+
+                    <div class="work-place mb-4">
+                        <h6 class="fw-bold mb-2">Образовательный центр "Эрудит"</h6>
+                        <p class="text-muted small mb-1">
+                            <span class="text-primary">Должность:</span> Старший преподаватель
+                        </p>
+                        <p class="text-muted small mb-1">
+                            <span class="text-primary">График:</span> Сб-Вс, 10:00-18:00
+                        </p>
+                        <p class="text-muted small mb-0">
+                            <span class="text-primary">Адрес:</span> пр. Науки, 23
+                        </p>
+                    </div>
+
+                    <div class="work-place">
+                        <h6 class="fw-bold mb-2">Частная практика</h6>
+                        <p class="text-muted small mb-1">
+                            <span class="text-primary">Формат:</span> Онлайн и оффлайн
+                        </p>
+                        <p class="text-muted small mb-1">
+                            <span class="text-primary">Адрес:</span> ул. Центральная, 78 (по записи)
+                        </p>
+                        <p class="text-muted small mb-0">
+                            <span class="text-primary">Онлайн:</span> Zoom, Skype, Discord
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- График работы -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h4 class="card-title mb-4">🕐 График работы</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="schedule-table">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td class="fw-semibold">Понедельник - Пятница</td>
+                                            <td>9:00 - 21:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-semibold">Суббота</td>
+                                            <td>10:00 - 18:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-semibold">Воскресенье</td>
+                                            <td>10:00 - 16:00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="schedule-info">
+                                <h6 class="fw-semibold mb-3">Примечания:</h6>
+                                <ul class="list-unstyled text-muted">
+                                    <li class="mb-2">• Время указано для консультаций</li>
+                                    <li class="mb-2">• Занятия проводятся по предварительной записи</li>
+                                    <li class="mb-2">• Возможны утренние и вечерние занятия</li>
+                                    <li class="mb-0">• Онлайн занятия доступны в любое время</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Карта (заглушка) -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h4 class="card-title mb-4">🗺️ Местоположение</h4>
+                    <div class="map-placeholder bg-light rounded d-flex align-items-center justify-content-center" style="height: 300px;">
+                        <div class="text-center text-muted">
+                            <div class="mb-3" style="font-size: 3rem;">🗺️</div>
+                            <p class="mb-0">Здесь будет карта с местоположением</p>
+                            <small>г. Москва, ул. Центральная, 78</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA блок -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="cta-section bg-primary text-white rounded p-5 text-center">
+                <h3 class="mb-3">Готовы начать занятия?</h3>
+                <p class="mb-4">Свяжитесь со мной для бесплатной консультации и пробного урока</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="tel:+79991234567" class="btn btn-light btn-lg px-4">
+                        📞 Позвонить сейчас
+                    </a>
+                    <a href="{% url 'singUp' %}" class="btn btn-outline-light btn-lg px-4">
+                        📝 Записаться онлайн
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

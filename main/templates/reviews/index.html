@@ -1,13 +1,284 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-</head>
-<body>
-    <h1>{{ title }}</h1>
-    <div>{{ content }}</div>
-    <div>Комментарий №{{get_params.number}}</div>
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Отзывы - Репетитор по математике{% endblock %}
+
+{% block content %}
+<div class="container py-5 mt-5">
+    <!-- Хлебные крошки -->
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Главная</a></li>
+            <li class="breadcrumb-item active">Отзывы</li>
+        </ol>
+    </nav>
+
+    <!-- Заголовок -->
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-primary mb-3">Отзывы учеников и родителей</h1>
+        <p class="lead text-muted">
+            Вот что говорят о результатах наших занятий. Каждый отзыв — это реальная история успеха!
+        </p>
+    </div>
+
+    <!-- Статистика -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body py-4">
+                    <div class="row text-center">
+                        <div class="col-md-3 col-6 mb-3">
+                            <div class="rating-stats">
+                                <div class="rating-number display-6 fw-bold text-primary">4.9</div>
+                                <div class="rating-stars mb-2">
+                                    ⭐⭐⭐⭐⭐
+                                </div>
+                                <div class="rating-label text-muted">Средняя оценка</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-3">
+                            <div class="reviews-count">
+                                <div class="count-number display-6 fw-bold text-primary">127</div>
+                                <div class="count-icon mb-2">📝</div>
+                                <div class="count-label text-muted">Всего отзывов</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-3">
+                            <div class="success-rate">
+                                <div class="rate-number display-6 fw-bold text-primary">96%</div>
+                                <div class="rate-icon mb-2">🎯</div>
+                                <div class="rate-label text-muted">Довольных клиентов</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-3">
+                            <div class="experience-count">
+                                <div class="exp-number display-6 fw-bold text-primary">12+</div>
+                                <div class="exp-icon mb-2">📚</div>
+                                <div class="exp-label text-muted">Лет опыта</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Отзывы -->
+    <div class="row">
+        <!-- Отзыв 1 -->
+        <div class="col-lg-6 mb-4">
+            <div class="card review-card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="review-header d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h5 class="review-author mb-1">Мария Иванова</h5>
+                            <p class="review-meta text-muted small mb-0">Ученица 11 класса, ЕГЭ</p>
+                        </div>
+                        <div class="review-rating text-warning">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">
+                            Занимались с Иваном Сергеевичем весь 11 класс. С нуля подняли математику с 50 до 92 баллов на ЕГЭ! 
+                            Объясняет очень доступно, находит подход к каждому ученику. Благодаря ему поступила в МГУ на бюджет!
+                        </p>
+                        <div class="review-result badge bg-success mb-3">
+                            Результат: 92 балла ЕГЭ
+                        </div>
+                    </div>
+                    <div class="review-footer">
+                        <small class="text-muted">Февраль 2024</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Отзыв 2 -->
+        <div class="col-lg-6 mb-4">
+            <div class="card review-card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="review-header d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h5 class="review-author mb-1">Сергей Петров (папа)</h5>
+                            <p class="review-meta text-muted small mb-0">Родитель, ОГЭ</p>
+                        </div>
+                        <div class="review-rating text-warning">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">
+                            Сын сдал ОГЭ на 5! До занятий с Иваном Сергеевичем еле-еле тянул на тройку. 
+                            Преподаватель смог заинтересовать предметом, теперь сын сам делает домашние задания. 
+                            Очень благодарны за профессиональный подход!
+                        </p>
+                        <div class="review-result badge bg-success mb-3">
+                            Результат: 5 на ОГЭ
+                        </div>
+                    </div>
+                    <div class="review-footer">
+                        <small class="text-muted">Январь 2024</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Отзыв 3 -->
+        <div class="col-lg-6 mb-4">
+            <div class="card review-card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="review-header d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h5 class="review-author mb-1">Анна Козлова</h5>
+                            <p class="review-meta text-muted small mb-0">Ученица 8 класса</p>
+                        </div>
+                        <div class="review-rating text-warning">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">
+                            Иван Сергеевич — лучший преподаватель! Раньше ненавидела математику, сейчас это мой любимый предмет. 
+                            Объясняет так, что всё сразу становится понятно. За полгода с тройки вышла на твердую пятерку!
+                        </p>
+                        <div class="review-result badge bg-success mb-3">
+                            Результат: 5 в школе
+                        </div>
+                    </div>
+                    <div class="review-footer">
+                        <small class="text-muted">Декабрь 2023</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Отзыв 4 -->
+        <div class="col-lg-6 mb-4">
+            <div class="card review-card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="review-header d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h5 class="review-author mb-1">Дмитрий Смирнов</h5>
+                            <p class="review-meta text-muted small mb-0">Ученик 9 класса, олимпиады</p>
+                        </div>
+                        <div class="review-rating text-warning">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">
+                            Занимаюсь олимпиадной математикой с Иваном Сергеевичем 2 года. В этом году стал призером 
+                            регионального этапа Всероссийской олимпиады! Преподаватель дает нестандартные задачи и учит 
+                            нешаблонно мыслить.
+                        </p>
+                        <div class="review-result badge bg-success mb-3">
+                            Результат: Призер олимпиады
+                        </div>
+                    </div>
+                    <div class="review-footer">
+                        <small class="text-muted">Ноябрь 2023</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Отзыв 5 -->
+        <div class="col-lg-6 mb-4">
+            <div class="card review-card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="review-header d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h5 class="review-author mb-1">Ольга Николаева (мама)</h5>
+                            <p class="review-meta text-muted small mb-0">Родитель, ЕГЭ</p>
+                        </div>
+                        <div class="review-rating text-warning">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">
+                            Дочь занималась с Иваном Сергеевичем 2 года. Сдали ЕГЭ на 94 балла! 
+                            Особенно хочу отметить индивидуальный подход и гибкий график. Преподаватель всегда шел навстречу, 
+                            если нужно было перенести занятие. Очень рекомендую!
+                        </p>
+                        <div class="review-result badge bg-success mb-3">
+                            Результат: 94 балла ЕГЭ
+                        </div>
+                    </div>
+                    <div class="review-footer">
+                        <small class="text-muted">Октябрь 2023</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Отзыв 6 -->
+        <div class="col-lg-6 mb-4">
+            <div class="card review-card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="review-header d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h5 class="review-author mb-1">Александр Волков</h5>
+                            <p class="review-meta text-muted small mb-0">Студент 1 курса</p>
+                        </div>
+                        <div class="review-rating text-warning">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">
+                            Занимался с Иваном Сергеевичем в 10-11 классах. Благодаря ему не только сдал ЕГЭ на 89 баллов, 
+                            но и получил отличную базу для университета. Сейчас легко справляюсь с высшей математикой. 
+                            Спасибо за фундаментальные знания!
+                        </p>
+                        <div class="review-result badge bg-success mb-3">
+                            Результат: 89 баллов ЕГЭ
+                        </div>
+                    </div>
+                    <div class="review-footer">
+                        <small class="text-muted">Сентябрь 2023</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Пагинация -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <nav aria-label="Навигация по отзывам">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Назад</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Вперед</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- CTA блок -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="cta-section bg-primary text-white rounded p-5 text-center">
+                <h3 class="mb-3">Присоединяйтесь к нашим успехам!</h3>
+                <p class="mb-4">Начните свой путь к высоким результатам в математике</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="{% url 'singUp' %}" class="btn btn-light btn-lg px-4">
+                        📝 Записаться на пробный урок
+                    </a>
+                    <a href="{% url 'contacts' %}" class="btn btn-outline-light btn-lg px-4">
+                        📞 Связаться с репетитором
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
